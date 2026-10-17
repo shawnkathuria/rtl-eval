@@ -1,0 +1,11 @@
+# simulation / mcy outputs
+**/sim_build/
+**/results.xml
+**/trace*.csv
+**/__pycache__/
+designs/*/mcy/database/
+designs/*/mcy/tasks/
+designs/*/mcy/classify_work/
+designs/*/mcy/classify_report.md
+*.vcd
+*.log
