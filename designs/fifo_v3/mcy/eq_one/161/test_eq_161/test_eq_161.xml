@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-10-21T21:22:44" hostname="Shawns-MacBook-Pro-2.local" package="test_eq" id="0" name="161" tests="4" errors="0" failures="2" time="739" skipped="2">
+<properties>
+<property name="os" value="Darwin"/>
+<property name="expect" value="PASS, FAIL, TIMEOUT, ERROR"/>
+<property name="status" value="FAIL"/>
+</properties>
+<testcase classname="161" name="build execution" time="0">
+</testcase>
+<testcase classname="161" name="Property ASSERT in miter at miter.sv:41.13-41.43" time="0" type="ASSERT" location="miter.sv:41.13-41.43" id="_witness_.check_miter_sv_41_assert_8" tracefile="engine_0/trace.vcd">
+<failure type="ASSERT" message="Property ASSERT in miter at miter.sv:41.13-41.43 failed. Trace file: engine_0/trace.vcd" />
+</testcase>
+<testcase classname="161" name="Property ASSERT in miter at miter.sv:42.13-42.44" time="0" type="ASSERT" location="miter.sv:42.13-42.44" id="_witness_.check_miter_sv_42_assert_10" tracefile="engine_0/trace.vcd">
+<failure type="ASSERT" message="Property ASSERT in miter at miter.sv:42.13-42.44 failed. Trace file: engine_0/trace.vcd" />
+</testcase>
+<testcase classname="161" name="Property ASSERT in miter at miter.sv:43.13-43.44" time="0" type="ASSERT" location="miter.sv:43.13-43.44" id="_witness_.check_miter_sv_43_assert_12">
+<skipped />
+</testcase>
+<testcase classname="161" name="Property ASSERT in miter at miter.sv:44.29-44.58" time="0" type="ASSERT" location="miter.sv:44.29-44.58" id="_witness_.check_miter_sv_44_assert_15">
+<skipped />
+</testcase>
+<system-out>SBY 21:10:23 [test_eq_161] Removing directory '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/161/test_eq_161'.
+SBY 21:10:23 [test_eq_161] Copy '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/161/miter.sv' to '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/161/test_eq_161/src/miter.sv'.
+SBY 21:10:23 [test_eq_161] Copy '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/161/mutated.il' to '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/161/test_eq_161/src/mutated.il'.
+SBY 21:10:23 [test_eq_161] engine_0: smtbmc yices
+SBY 21:10:23 [test_eq_161] base: starting process &quot;cd test_eq_161/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 21:10:23 [test_eq_161] base: finished (returncode=0)
+SBY 21:10:23 [test_eq_161] prep: starting process &quot;cd test_eq_161/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 21:10:23 [test_eq_161] prep: finished (returncode=0)
+SBY 21:10:23 [test_eq_161] smt2: starting process &quot;cd test_eq_161/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 21:10:23 [test_eq_161] smt2: finished (returncode=0)
+SBY 21:10:23 [test_eq_161] engine_0: starting process &quot;cd test_eq_161; yosys-smtbmc -s yices --presat --unroll --noprogress -t 40  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Solver: yices
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 8..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 8..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 9..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 9..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 10..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 10..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assumptions in step 11..
+SBY 21:10:24 [test_eq_161] engine_0: ##   0:00:00  Checking assertions in step 11..
+SBY 21:10:25 [test_eq_161] engine_0: ##   0:00:01  Checking assumptions in step 12..
+SBY 21:10:25 [test_eq_161] engine_0: ##   0:00:01  Checking assertions in step 12..
+SBY 21:10:26 [test_eq_161] engine_0: ##   0:00:02  Checking assumptions in step 13..
+SBY 21:10:26 [test_eq_161] engine_0: ##   0:00:02  Checking assertions in step 13..
+SBY 21:10:29 [test_eq_161] engine_0: ##   0:00:05  Checking assumptions in step 14..
+SBY 21:10:29 [test_eq_161] engine_0: ##   0:00:05  Checking assertions in step 14..
+SBY 21:10:35 [test_eq_161] engine_0: ##   0:00:10  Checking assumptions in step 15..
+SBY 21:10:35 [test_eq_161] engine_0: ##   0:00:10  Checking assertions in step 15..
+SBY 21:10:44 [test_eq_161] engine_0: ##   0:00:20  Checking assumptions in step 16..
+SBY 21:10:44 [test_eq_161] engine_0: ##   0:00:20  Checking assertions in step 16..
+SBY 21:11:00 [test_eq_161] engine_0: ##   0:00:36  Checking assumptions in step 17..
+SBY 21:11:00 [test_eq_161] engine_0: ##   0:00:36  Checking assertions in step 17..
+SBY 21:11:35 [test_eq_161] engine_0: ##   0:01:11  Checking assumptions in step 18..
+SBY 21:11:35 [test_eq_161] engine_0: ##   0:01:11  Checking assertions in step 18..
+SBY 21:12:35 [test_eq_161] engine_0: ##   0:02:11  Checking assumptions in step 19..
+SBY 21:12:35 [test_eq_161] engine_0: ##   0:02:11  Checking assertions in step 19..
+SBY 21:13:35 [test_eq_161] engine_0: ##   0:03:11  waiting for solver (1 minute)
+SBY 21:14:09 [test_eq_161] engine_0: ##   0:03:45  Checking assumptions in step 20..
+SBY 21:14:09 [test_eq_161] engine_0: ##   0:03:45  Checking assertions in step 20..
+SBY 21:15:09 [test_eq_161] engine_0: ##   0:04:45  waiting for solver (1 minute)
+SBY 21:16:57 [test_eq_161] engine_0: ##   0:06:33  Checking assumptions in step 21..
+SBY 21:16:57 [test_eq_161] engine_0: ##   0:06:33  Checking assertions in step 21..
+SBY 21:17:57 [test_eq_161] engine_0: ##   0:07:33  waiting for solver (1 minute)
+SBY 21:21:57 [test_eq_161] engine_0: ##   0:11:33  waiting for solver (5 minutes)
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  BMC failed!
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  Assert failed in miter: miter.sv:41.13-41.43 (_witness_.check_miter_sv_41_assert_8)
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  Assert failed in miter: miter.sv:42.13-42.44 (_witness_.check_miter_sv_42_assert_10)
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  Writing trace to VCD file: engine_0/trace.vcd
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  Writing trace to constraints file: engine_0/trace.smtc
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  Writing trace to Yosys witness file: engine_0/trace.yw
+SBY 21:22:44 [test_eq_161] engine_0: ##   0:12:20  Status: failed
+SBY 21:22:44 [test_eq_161] engine_0: finished (returncode=1)
+SBY 21:22:44 [test_eq_161] engine_0: Status returned by engine: FAIL
+SBY 21:22:44 [test_eq_161] summary: Elapsed clock time [H:MM:SS (secs)]: 0:12:20 (740)
+SBY 21:22:44 [test_eq_161] summary: Elapsed process time [H:MM:SS (secs)]: 0:12:19 (739)
+SBY 21:22:44 [test_eq_161] summary: engine_0 (smtbmc yices) returned FAIL
+SBY 21:22:44 [test_eq_161] summary: counterexample trace: test_eq_161/engine_0/trace.vcd
+SBY 21:22:44 [test_eq_161] summary:   failed assertion miter._witness_.check_miter_sv_41_assert_8 at miter.sv:41.13-41.43 step 21
+SBY 21:22:44 [test_eq_161] summary:   failed assertion miter._witness_.check_miter_sv_42_assert_10 at miter.sv:42.13-42.44 step 21
+SBY 21:22:44 [test_eq_161] DONE (FAIL, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

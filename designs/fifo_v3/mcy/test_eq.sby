@@ -3,12 +3,12 @@
 
 [options]
 mode bmc
-depth 20
-expect pass,fail,timeout
-timeout 900
+depth 24
+expect pass,fail,timeout,error
+timeout 1800
 
 [engines]
-smtbmc z3
+smtbmc yices
 
 [script]
 --pycode-begin--

@@ -12,10 +12,10 @@ bash "$SCRIPTS/create_mutated.sh" -o mutated.v
 if make -C "$PRJDIR/../tb" RTL="$PWD/mutated.v" SIM_BUILD="$PWD/sim_build" \
         COCOTB_RESULTS_FILE="$PWD/results.xml" > sim.log 2>&1; then
     echo "1 PASS" > output.txt
-elif grep -q "FAIL=[1-9]" sim.log; then
-    echo "1 FAIL" > output.txt
+elif grep -q "FAIL=[1-9]" sim.log && grep -q "AssertionError" sim.log; then
+    echo "1 FAIL" > output.txt       # a checker fired: the bench caught it
 else
-    # compile error / crash: neither a pass nor a detected bug
+    # compile error, crash, or a non-assertion Python exception: NOT a caught bug
     echo "1 ERROR" > output.txt
 fi
 

@@ -12,8 +12,12 @@ bash "$SCRIPTS/create_mutated.sh" -c -o mutated.il
 cp "$PRJDIR/miter.sv" "$PRJDIR/test_eq.sby" .
 
 while read -r idx mut; do
-    sby -f test_eq.sby "$idx"
-    status=$(head -n1 "test_eq_${idx}/status" | awk '{print $1}')
+    sby -f test_eq.sby "$idx" || true
+    status=$(head -n1 "test_eq_${idx}/status" 2>/dev/null | awk '{print $1}')
+    case "$status" in
+        PASS|FAIL|TIMEOUT) ;;
+        *) status=ERROR ;;   # sby crashed or refused the design: record it, don't abort the run
+    esac
     echo "$idx $status" >> output.txt
 done < input.txt
 
