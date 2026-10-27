@@ -12,7 +12,9 @@ prep -top fifo_v3
 
 [logic]
 # test_sim : the testbench under evaluation, run against the mutant
-# test_eq  : formal BMC miter, golden vs mutant, same inputs -> same outputs?
+# test_eq  : formal miter, golden vs mutant, same inputs -> same outputs?
+#            (SymbiYosys `mode prove`, abc pdr: PASS is an unbounded proof of equivalence,
+#             FAIL is a counterexample trace, TIMEOUT means the solver gave up)
 #
 # tb_okay  == testbench PASSED on the mutant  (it did NOT notice)
 # eq_okay  == formal says mutant is equivalent (nothing TO notice)
@@ -26,9 +28,9 @@ eq_res  = result("test_eq")
 if eq_res == "ERROR":
     tag("EQERROR")     # formal tool failed on this mutant; excluded from the score, look at the log
     return
-eq_okay = (eq_res == "PASS")   # no counterexample found within the bound
+eq_okay = (eq_res == "PASS")   # proven equivalent (inductive invariant found)
 if eq_res == "TIMEOUT":
-    tag("EQTIMEOUT")   # UNRESOLVED: solver gave up before the bound. Not equivalent, not a bug. Rerun deeper.
+    tag("EQTIMEOUT")   # UNRESOLVED: solver gave up. Not equivalent, not a bug. Rerun with a longer timeout.
     return
 
 if tb_okay and not eq_okay:
@@ -36,9 +38,9 @@ if tb_okay and not eq_okay:
 elif not tb_okay and not eq_okay:
     tag("COVERED")     # real bug, bench caught it
 elif tb_okay and eq_okay:
-    tag("NOCHANGE")    # no difference within BMC bound (bounded equivalence), excluded from score
+    tag("NOCHANGE")    # proven equivalent: the mutation changes nothing observable; excluded from score
 elif not tb_okay and eq_okay:
-    tag("EQGAP")       # bench failed, formal found no difference within bound: depth too short, X-prop in sim, or flaky bench
+    tag("EQGAP")       # bench failed but formal proved equivalence: X-prop in sim, miter ties off an input the bench drives, or flaky bench
 else:
     assert 0
 
@@ -48,15 +50,15 @@ unc = tags("UNCOVERED")
 to  = tags("EQTIMEOUT")
 if cov + unc:
     print("Mutation score (COVERED / (COVERED+UNCOVERED)): %d/%d = %.1f%%" % (cov, cov+unc, 100.0*cov/(cov+unc)))
-print("Bounded-equivalent mutants (NOCHANGE, no difference within BMC depth): %d" % tags("NOCHANGE"))
+print("Proven-equivalent mutants (NOCHANGE, excluded from score): %d" % tags("NOCHANGE"))
 if to:
-    print("UNRESOLVED (formal timed out, not counted either way): %d  -> mcy reset test_eq EQTIMEOUT && mcy run" % to)
+    print("UNRESOLVED (formal timed out, not counted either way): %d  -> raise `timeout` in test_eq.sby, delete those rows from results (test='test_eq'), mcy reset && mcy run" % to)
 if tags("SIMERROR"):
     print("NOTE: %d SIMERROR mutants (bench crashed rather than asserted; excluded)" % tags("SIMERROR"))
 if tags("EQERROR"):
     print("NOTE: %d EQERROR mutants (formal tool error; excluded)" % tags("EQERROR"))
 if tags("EQGAP"):
-    print("WARNING: %d EQGAP mutants (bench FAILED but formal found no difference within bound; investigate)" % tags("EQGAP"))
+    print("WARNING: %d EQGAP mutants (bench FAILED but formal proved equivalence; investigate)" % tags("EQGAP"))
 
 [test test_sim]
 expect PASS FAIL ERROR
