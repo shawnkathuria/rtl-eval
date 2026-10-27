@@ -19,6 +19,11 @@ prep -top miter
 fmcombine miter ref uut
 flatten
 opt -fast
+memory_map
+techmap
+opt -fast
+setundef -anyseq
+
 
 [files]
 ../../miter.sv
