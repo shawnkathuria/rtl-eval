@@ -9,3 +9,5 @@ designs/*/mcy/classify_work/
 designs/*/mcy/classify_report.md
 *.vcd
 *.log
+designs/*/mcy/eq_one/
+*.bak
