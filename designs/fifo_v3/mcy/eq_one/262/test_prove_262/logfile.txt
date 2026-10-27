@@ -1,0 +1,74 @@
+SBY 15:20:44 [test_prove_262] Removing directory '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/262/test_prove_262'.
+SBY 15:20:44 [test_prove_262] Copy '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/262/miter.sv' to '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/262/test_prove_262/src/miter.sv'.
+SBY 15:20:44 [test_prove_262] Copy '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/262/mutated.il' to '/Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/eq_one/262/test_prove_262/src/mutated.il'.
+SBY 15:20:44 [test_prove_262] engine_0: abc pdr
+SBY 15:20:44 [test_prove_262] base: starting process "cd test_prove_262/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 15:20:44 [test_prove_262] base: miter.sv:26: Warning: Literal has a width of 8 bit, but value requires 9 bit.
+SBY 15:20:44 [test_prove_262] base: finished (returncode=0)
+SBY 15:20:44 [test_prove_262] prep: starting process "cd test_prove_262/model; yosys -ql design_prep.log design_prep.ys"
+SBY 15:20:44 [test_prove_262] prep: finished (returncode=0)
+SBY 15:20:44 [test_prove_262] aig: starting process "cd test_prove_262/model; yosys -ql design_aiger.log design_aiger.ys"
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\clk_i like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\rst_ni like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\push_i like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [0] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [1] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [2] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [3] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [4] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [5] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [6] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\data_i [7] like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\pop_i like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating undriven bit miter.\flush_i like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: Warning: Treating a total of 13 undriven bits in miter like $anyseq.
+SBY 15:20:45 [test_prove_262] aig: finished (returncode=0)
+SBY 15:20:45 [test_prove_262] engine_0: starting process "cd test_prove_262; yosys-abc -c 'read_aiger model/design_aiger.aig; fold; strash; pdr -v -l; write_cex -a engine_0/trace.aiw'"
+SBY 15:20:45 [test_prove_262] engine_0: ======== ABC command line "read_aiger model/design_aiger.aig; fold; strash; pdr -v -l; write_cex -a engine_0/trace.aiw"
+SBY 15:20:45 [test_prove_262] engine_0: Warning: The last 11 outputs are interpreted as constraints.
+SBY 15:20:45 [test_prove_262] engine_0: VarMax = 300. FrameMax = 10000. QueMax = 0. TimeMax = 179. MonoCNF = no. SkipGen = no. SolveAll = no.
+SBY 15:20:45 [test_prove_262] engine_0: Frame Clauses                                                     Max Queue Flops Time
+SBY 15:20:45 [test_prove_262] engine_0: 1 : 0 15                                                                1    17      0.01 sec  T/O =  0  PRV =  0
+SBY 15:20:45 [test_prove_262] engine_0: 2 : 0 4 114 ~1                                                           3   118      0.07 sec  T/O =  0  PRV =  0
+SBY 15:20:45 [test_prove_262] engine_0: Block =  120  Oblig =   326  Clause =   119  Call =   593 (sat=59.5%)  Cex =   0  Start =   0
+SBY 15:20:45 [test_prove_262] engine_0: SAT solving =     0.02 sec ( 25.30 %)
+SBY 15:20:45 [test_prove_262] engine_0: unsat     =     0.00 sec (  1.94 %)
+SBY 15:20:45 [test_prove_262] engine_0: sat       =     0.02 sec ( 23.36 %)
+SBY 15:20:45 [test_prove_262] engine_0: Generalize  =     0.03 sec ( 36.45 %)
+SBY 15:20:45 [test_prove_262] engine_0: Push clause =     0.00 sec (  0.35 %)
+SBY 15:20:45 [test_prove_262] engine_0: Ternary sim =     0.03 sec ( 44.14 %)
+SBY 15:20:45 [test_prove_262] engine_0: Containment =     0.00 sec (  0.22 %)
+SBY 15:20:45 [test_prove_262] engine_0: CNF compute =     0.00 sec (  0.80 %)
+SBY 15:20:45 [test_prove_262] engine_0: Refinement  =     0.00 sec (  0.20 %)
+SBY 15:20:45 [test_prove_262] engine_0: TOTAL       =     0.08 sec (100.00 %)
+SBY 15:20:45 [test_prove_262] engine_0: Output 1 of miter "model/design_aiger" was asserted in frame 2.  Time =     0.08 sec
+SBY 15:20:45 [test_prove_262] engine_0: finished (returncode=0)
+SBY 15:20:45 [test_prove_262] engine_0: Status returned by engine: FAIL
+SBY 15:20:45 [test_prove_262] smt2: starting process "cd test_prove_262/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 15:20:45 [test_prove_262] engine_0: starting process "cd test_prove_262; yosys-witness aiw2yw engine_0/trace.aiw model/design_aiger.ywa engine_0/trace_aiw.yw"
+SBY 15:20:45 [test_prove_262] smt2: finished (returncode=0)
+SBY 15:20:45 [test_prove_262] engine_0: Converting AIGER witness trace 'engine_0/trace.aiw' to Yosys witness trace 'engine_0/trace_aiw.yw'...
+SBY 15:20:45 [test_prove_262] engine_0: Using Yosys witness AIGER map file 'model/design_aiger.ywa'
+SBY 15:20:45 [test_prove_262] engine_0: Converted 3 time steps.
+SBY 15:20:45 [test_prove_262] engine_0: finished (returncode=0)
+SBY 15:20:45 [test_prove_262] engine_0: starting process "cd test_prove_262; yosys-smtbmc -s yices --noprogress --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc --yw engine_0/trace_aiw.yw model/design_smt2.smt2"
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Solver: yices
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Skipping step 0..
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Skipping step 1..
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  BMC failed!
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Assert failed in miter: miter.sv:43.13-43.44 (_witness_.check_miter_sv_43_assert_10)
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Assert failed in miter: miter.sv:44.13-44.44 (_witness_.check_miter_sv_44_assert_12)
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace.yw
+SBY 15:20:45 [test_prove_262] engine_0: ##   0:00:00  Status: FAILED
+SBY 15:20:45 [test_prove_262] engine_0: finished (returncode=1)
+SBY 15:20:45 [test_prove_262] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:20:45 [test_prove_262] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 15:20:45 [test_prove_262] summary: engine_0 (abc pdr) returned FAIL
+SBY 15:20:45 [test_prove_262] summary: counterexample trace: test_prove_262/engine_0/trace.vcd
+SBY 15:20:45 [test_prove_262] summary:   failed assertion miter._witness_.check_miter_sv_43_assert_10 at miter.sv:43.13-43.44 step 2
+SBY 15:20:45 [test_prove_262] summary:   failed assertion miter._witness_.check_miter_sv_44_assert_12 at miter.sv:44.13-44.44 step 2
+SBY 15:20:45 [test_prove_262] DONE (FAIL, rc=0)

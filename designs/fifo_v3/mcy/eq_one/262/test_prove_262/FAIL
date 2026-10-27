@@ -1,0 +1,7 @@
+Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+engine_0 (abc pdr) returned FAIL
+counterexample trace: engine_0/trace.vcd
+counterexample trace: engine_0/trace.yw
+  failed assertion miter._witness_.check_miter_sv_43_assert_10 at miter.sv:43.13-43.44 step 2
+  failed assertion miter._witness_.check_miter_sv_44_assert_12 at miter.sv:44.13-44.44 step 2

@@ -9,6 +9,7 @@
 set -e
 N=${1:?mutation id}
 DEPTH=${2:-}
+CFG=${CFG:-test_eq}
 HERE=$(pwd)
 [ -f database/design.il ] || { echo "run from a design's mcy/ dir after mcy init" >&2; exit 1; }
 
@@ -36,11 +37,12 @@ rm -rf "$W"; mkdir -p "$W"; cd "$W"
 echo "$N $MUT" > input.txt
 bash "$SCRIPTS/create_mutated.sh" -c -d "$HERE/database/design.il" -o mutated.il
 cp "$HERE/miter.sv" .
-sed 's|^../../miter.sv|miter.sv|' "$HERE/test_eq.sby" > test_eq.sby
-[ -n "$DEPTH" ] && sed -i.bak "s/^depth .*/depth $DEPTH/" test_eq.sby
+sed 's|^../../miter.sv|miter.sv|' "$HERE/$CFG.sby" > $CFG.sby
+[ -n "$DEPTH" ] && sed -i.bak "s/^depth .*/depth $DEPTH/" $CFG.sby
 
 echo "== mutant $N: $MUT"
-echo "== depth: $(grep ^depth test_eq.sby)"
-sby -f test_eq.sby "$N" 2>&1 | grep -E "summary:|DONE"
-echo "== status: $(head -n1 test_eq_$N/status)"
-[ -f "test_eq_$N/engine_0/trace.vcd" ] && echo "== counterexample: $W/test_eq_$N/engine_0/trace.vcd"
+echo "== depth: $(grep ^depth $CFG.sby)"
+sby -f $CFG.sby "$N" 2>&1 | grep -E "sumary:|DONE"
+echo "== status: $(head -n1 ${CFG}_$N/status)"
+[ -f "${CFG}_$N/engine_0/trace.vcd" ] && echo "== counterexample: 
+$W/${CFG}_$N/engine_0/trace.vcd"

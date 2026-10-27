@@ -2,13 +2,12 @@
 \d+
 
 [options]
-mode bmc
-depth 24
+mode prove
 expect pass,fail,timeout,error
 timeout 1800
 
 [engines]
-smtbmc yices
+abc pdr
 
 [script]
 --pycode-begin--
@@ -24,3 +23,5 @@ opt -fast
 [files]
 ../../miter.sv
 mutated.il
+
+

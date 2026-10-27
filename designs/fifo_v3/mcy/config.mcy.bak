@@ -1,0 +1,66 @@
+[options]
+size 300
+tags COVERED UNCOVERED NOCHANGE EQGAP EQTIMEOUT EQERROR SIMERROR
+
+[script]
+read_verilog -sv -DSYNTHESIS ../rtl/fifo_v3.sv
+chparam -set DATA_WIDTH 8 -set DEPTH 8 fifo_v3
+prep -top fifo_v3
+
+[files]
+../rtl/fifo_v3.sv
+
+[logic]
+# test_sim : the testbench under evaluation, run against the mutant
+# test_eq  : formal BMC miter, golden vs mutant, same inputs -> same outputs?
+#
+# tb_okay  == testbench PASSED on the mutant  (it did NOT notice)
+# eq_okay  == formal says mutant is equivalent (nothing TO notice)
+
+sim_res = result("test_sim")
+if sim_res == "ERROR":
+    tag("SIMERROR")    # bench crashed (not an assertion) on this mutant; excluded from the score
+    return
+tb_okay = (sim_res == "PASS")
+eq_res  = result("test_eq")
+if eq_res == "ERROR":
+    tag("EQERROR")     # formal tool failed on this mutant; excluded from the score, look at the log
+    return
+eq_okay = (eq_res in ("PASS", "TIMEOUT"))   # no counterexample found within the bound
+if eq_res == "TIMEOUT":
+    tag("EQTIMEOUT")   # UNRESOLVED: solver gave up before the bound. Not equivalent, not a bug. Rerun deeper.
+
+if tb_okay and not eq_okay:
+    tag("UNCOVERED")   # real bug, bench missed it  -> classify.py decides stim vs checker
+elif not tb_okay and not eq_okay:
+    tag("COVERED")     # real bug, bench caught it
+elif tb_okay and eq_okay:
+    tag("NOCHANGE")    # no difference within BMC bound (bounded equivalence), excluded from score
+elif not tb_okay and eq_okay:
+    tag("EQGAP")       # bench failed, formal found no difference within bound: depth too short, X-prop in sim, or flaky bench
+else:
+    assert 0
+
+[report]
+cov = tags("COVERED")
+unc = tags("UNCOVERED")
+to  = tags("EQTIMEOUT")
+if cov + unc:
+    print("Mutation score (COVERED / (COVERED+UNCOVERED)): %d/%d = %.1f%%" % (cov, cov+unc, 100.0*cov/(cov+unc)))
+print("Bounded-equivalent mutants (NOCHANGE, no difference within BMC depth): %d" % (tags("NOCHANGE") - to))
+if to:
+    print("UNRESOLVED (formal timed out, not counted either way): %d  -> mcy reset test_eq EQTIMEOUT && mcy run" % to)
+if tags("SIMERROR"):
+    print("NOTE: %d SIMERROR mutants (bench crashed rather than asserted; excluded)" % tags("SIMERROR"))
+if tags("EQERROR"):
+    print("NOTE: %d EQERROR mutants (formal tool error; excluded)" % tags("EQERROR"))
+if tags("EQGAP"):
+    print("WARNING: %d EQGAP mutants (bench FAILED but formal found no difference within bound; investigate)" % tags("EQGAP"))
+
+[test test_sim]
+expect PASS FAIL ERROR
+run bash $PRJDIR/test_sim.sh
+
+[test test_eq]
+expect PASS FAIL TIMEOUT ERROR
+run bash $PRJDIR/test_eq.sh

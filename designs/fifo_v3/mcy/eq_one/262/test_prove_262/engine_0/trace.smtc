@@ -1,0 +1,34 @@
+initial
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_166_gate] #b0110000000000001100010101000001010101010111011110011110100010000)
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_166_gold] #b0010001111101101001100110000001110111111111111110011010100000000)
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_171_gate] #b000)
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_171_gold] #b000)
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_176_gate] #b100)
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_176_gold] #b111)
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_181_gate] #b1110)
+assume (= [_witness_.anyinit_flatten_ref_uut__procdff_181_gold] #b0111)
+assume (= [init] true)
+
+state 0
+assume (= [clk_i] false)
+assume (= [data_i] #b01001010)
+assume (= [flush_i] true)
+assume (= [pop_i] true)
+assume (= [push_i] true)
+assume (= [rst_ni] false)
+
+state 1
+assume (= [clk_i] false)
+assume (= [data_i] #b00100000)
+assume (= [flush_i] true)
+assume (= [pop_i] false)
+assume (= [push_i] false)
+assume (= [rst_ni] true)
+
+state 2
+assume (= [clk_i] false)
+assume (= [data_i] #b00100000)
+assume (= [flush_i] false)
+assume (= [pop_i] true)
+assume (= [push_i] true)
+assume (= [rst_ni] true)

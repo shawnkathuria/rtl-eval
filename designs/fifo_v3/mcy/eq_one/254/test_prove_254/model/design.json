@@ -1,0 +1,1708 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.70+145 (git sha1 a31d95ea0, Release, Clang /usr/local/osxcross/target/bin/aarch64-apple-darwin25.5-clang++ 21.1.8)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "miter",
+        "cell_sorts": [
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [4, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$procmux$127_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:98.13-98.52|../rtl/fifo_v3.sv:98.9-99.43"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$127_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:98.13-98.52|../rtl/fifo_v3.sv:98.9-99.43"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$136_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:85.13-85.30|../rtl/fifo_v3.sv:85.9-95.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$136_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:85.13-85.30|../rtl/fifo_v3.sv:85.9-95.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$139_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:85.13-85.30|../rtl/fifo_v3.sv:85.9-95.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$139_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:85.13-85.30|../rtl/fifo_v3.sv:85.9-95.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$148_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:70.13-70.30|../rtl/fifo_v3.sv:70.9-83.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$148_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:70.13-70.30|../rtl/fifo_v3.sv:70.9-83.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$151_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:70.13-70.30|../rtl/fifo_v3.sv:70.9-83.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$151_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:70.13-70.30|../rtl/fifo_v3.sv:70.9-83.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$85_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:134.22-134.33|../rtl/fifo_v3.sv:134.18-136.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$85_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:134.22-134.33|../rtl/fifo_v3.sv:134.18-136.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$88_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:119.17-119.24|../rtl/fifo_v3.sv:119.13-127.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$88_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:119.17-119.24|../rtl/fifo_v3.sv:119.13-127.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$91_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:119.17-119.24|../rtl/fifo_v3.sv:119.13-127.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$91_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:119.17-119.24|../rtl/fifo_v3.sv:119.13-127.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$94_gate",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:119.17-119.24|../rtl/fifo_v3.sv:119.13-127.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procmux$94_gold",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:119.17-119.24|../rtl/fifo_v3.sv:119.13-127.16"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$procmux$192",
+                  "attributes": {
+                    "src": "miter.sv:45.17-45.27|miter.sv:45.13-45.59"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$194",
+                  "attributes": {
+                    "src": "miter.sv:41.13-41.18|miter.sv:41.9-46.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$203",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "miter.sv:36.13-36.17|miter.sv:36.9-37.35"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$206",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "miter.sv:36.13-36.17|miter.sv:36.9-37.35"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$adff",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [64, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$procdff$166_gate",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:131.5-137.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000000000000000000000000000000000000000000000000000000000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procdff$166_gold",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:131.5-137.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000000000000000000000000000000000000000000000000000000000000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procdff$171_gate",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:113.5-129.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procdff$171_gold",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:113.5-129.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procdff$176_gate",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:113.5-129.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procdff$176_gold",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:113.5-129.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procdff$181_gate",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:113.5-129.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$procdff$181_gold",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "../rtl/fifo_v3.sv:113.5-129.8"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "00000000000000000000000000000000",
+                    "ARST_VALUE": "0000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$add",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [3, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [3, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:80$add$60_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:80.35-80.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:80$add$60_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:80.35-80.54"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:82$add$61_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:82.31-82.47"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:82$add$61_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:82.31-82.47"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:92$add$65_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:92.34-92.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:92$add$65_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:92.34-92.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000011"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$or",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [64, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$or$58_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$or$58_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$assume",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_271",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_271"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_272",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_272"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_275",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_275"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_278",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_278"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_281",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_281"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_282",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_282"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_283",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_283"
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "_witness_.assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_286",
+                  "attributes": {
+                    "hdlname": "_witness_ assume_flatten_ref_uut__auto_fmcombine_cc_222_generate_286"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$sub",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [4, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:94$sub$66_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:94.30-94.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:94$sub$66_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:94.30-94.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [64, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$not$54_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$not$54_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$not$68_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.33-98.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$not$68_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.33-98.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$not$70_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.44-98.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$not$70_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.44-98.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:54$eq$80_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:54.32-54.71"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:54$eq$80_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:54.32-54.71"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$209",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$211",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$215",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$219",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$221",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000111",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$223",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$225",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$227",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$229",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$231",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$237",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$241",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$243",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$245",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$247",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$249",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$251",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$255",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:166:generate$259",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$miter.sv:44$eq$13",
+                  "attributes": {
+                    "src": "miter.sv:44.21-44.43"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:70$logic_and$49_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:70.13-70.30"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:70$logic_and$49_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:70.13-70.30"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:85$logic_and$63_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:85.13-85.30"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:85$logic_and$63_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:85.13-85.30"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$logic_and$67_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.13-98.28"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$logic_and$69_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.13-98.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$logic_and$69_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.13-98.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$logic_and$71_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.13-98.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:98$logic_and$71_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:98.13-98.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$neg",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [7, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [33, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$neg$56_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "Y_WIDTH": "00000000000000000000000000100001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$neg$56_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000111",
+                    "Y_WIDTH": "00000000000000000000000000100001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [64, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$and$55_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$and$55_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000001000000",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$reduce_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:208:generate$273",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:208:generate$276",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:208:generate$279",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$auto$fmcombine.cc:208:generate$284",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$shift",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [33, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [64, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$shift$53_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000100001",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$shift$53_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000100001",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$shift$57_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000100001",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:72$shift$57_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:72.13-72.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000100001",
+                    "Y_WIDTH": "00000000000000000000000001000000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [4, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:55$eq$81_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:55.32-55.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:55$eq$81_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:55.32-55.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$miter.sv:36$logic_not$4",
+                  "attributes": {
+                    "src": "miter.sv:36.27-36.34"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$scopeinfo",
+            "ports": [
+
+            ],
+            "cells": [
+                {
+                  "name": "ref_uut",
+                  "attributes": {
+                    "cell_module_not_derived": "00000000000000000000000000000001",
+                    "cell_src": "miter.sv:25.13-30.6|miter.sv:18.13-23.6",
+                    "module": "$fmcombine\\fifo_v3"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$check",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "ARGS",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "TRG",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "_witness_.check_miter_sv_36_assume_3",
+                  "attributes": {
+                    "hdlname": "_witness_ check_miter_sv_36_assume_3",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "miter.sv:36.19-36.35"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assume",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_miter_sv_37_assume_5",
+                  "attributes": {
+                    "hdlname": "_witness_ check_miter_sv_37_assume_5",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "miter.sv:37.19-37.34"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assume",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111110",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_miter_sv_42_assert_8",
+                  "attributes": {
+                    "hdlname": "_witness_ check_miter_sv_42_assert_8",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "miter.sv:42.13-42.43"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_miter_sv_43_assert_10",
+                  "attributes": {
+                    "hdlname": "_witness_ check_miter_sv_43_assert_10",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "miter.sv:43.13-43.44"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111110",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_miter_sv_44_assert_12",
+                  "attributes": {
+                    "hdlname": "_witness_ check_miter_sv_44_assert_12",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "miter.sv:44.13-44.44"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111101",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                },
+                {
+                  "name": "_witness_.check_miter_sv_45_assert_15",
+                  "attributes": {
+                    "hdlname": "_witness_ check_miter_sv_45_assert_15",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "miter.sv:45.29-45.58"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111100",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": true,
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$208",
+                  "attributes": {
+                    "src": "miter.sv:34.5-34.39"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$shiftx",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [64, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [8, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:65$shiftx$47_gate",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:65.56-65.72"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$flatten\\ref_uut.$../rtl/fifo_v3.sv:65$shiftx$47_gold",
+                  "attributes": {
+                    "src": "../rtl/fifo_v3.sv:65.56-65.72"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000001000000",
+                    "B_SIGNED": "00000000000000000000000000000001",
+                    "B_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000001000"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "top": "00000000000000000000000000000001",
+            "src": "miter.sv:5.1-48.10"
+        }
+      }
+  ]
+}

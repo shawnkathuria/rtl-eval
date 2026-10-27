@@ -7,7 +7,8 @@ module miter (
     input        rst_ni,
     input        push_i,
     input  [7:0] data_i,
-    input        pop_i
+    input        pop_i,
+    input        flush_i
 );
     wire       ref_full,  uut_full;
     wire       ref_empty, uut_empty;
@@ -16,14 +17,14 @@ module miter (
 
     fifo_v3 ref (
         .mutsel (8'd 0),
-        .clk_i (clk_i), .rst_ni (rst_ni), .flush_i (1'b0), .testmode_i (1'b0),
+        .clk_i (clk_i), .rst_ni (rst_ni), .flush_i (flush_i), .testmode_i (1'b0),
         .full_o (ref_full), .empty_o (ref_empty), .usage_o (ref_usage),
         .data_i (data_i), .push_i (push_i), .data_o (ref_data), .pop_i (pop_i)
     );
 
     fifo_v3 uut (
         .mutsel (8'd `mutidx),
-        .clk_i (clk_i), .rst_ni (rst_ni), .flush_i (1'b0), .testmode_i (1'b0),
+        .clk_i (clk_i), .rst_ni (rst_ni), .flush_i (flush_i), .testmode_i (1'b0),
         .full_o (uut_full), .empty_o (uut_empty), .usage_o (uut_usage),
         .data_i (data_i), .push_i (push_i), .data_o (uut_data), .pop_i (pop_i)
     );

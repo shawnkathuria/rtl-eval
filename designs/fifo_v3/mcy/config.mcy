@@ -26,9 +26,10 @@ eq_res  = result("test_eq")
 if eq_res == "ERROR":
     tag("EQERROR")     # formal tool failed on this mutant; excluded from the score, look at the log
     return
-eq_okay = (eq_res in ("PASS", "TIMEOUT"))   # no counterexample found within the bound
+eq_okay = (eq_res == "PASS")   # no counterexample found within the bound
 if eq_res == "TIMEOUT":
     tag("EQTIMEOUT")   # UNRESOLVED: solver gave up before the bound. Not equivalent, not a bug. Rerun deeper.
+    return
 
 if tb_okay and not eq_okay:
     tag("UNCOVERED")   # real bug, bench missed it  -> classify.py decides stim vs checker
@@ -47,7 +48,7 @@ unc = tags("UNCOVERED")
 to  = tags("EQTIMEOUT")
 if cov + unc:
     print("Mutation score (COVERED / (COVERED+UNCOVERED)): %d/%d = %.1f%%" % (cov, cov+unc, 100.0*cov/(cov+unc)))
-print("Bounded-equivalent mutants (NOCHANGE, no difference within BMC depth): %d" % (tags("NOCHANGE") - to))
+print("Bounded-equivalent mutants (NOCHANGE, no difference within BMC depth): %d" % tags("NOCHANGE"))
 if to:
     print("UNRESOLVED (formal timed out, not counted either way): %d  -> mcy reset test_eq EQTIMEOUT && mcy run" % to)
 if tags("SIMERROR"):

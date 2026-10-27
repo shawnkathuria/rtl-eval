@@ -1,0 +1,3 @@
+read_rtlil /Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/database/design.il
+mutate -ctrl mutsel 8 1 -mode none
+write_rtlil mutated.il
