@@ -179,6 +179,8 @@ def main():
                     help="MCY tag to classify (default UNCOVERED)")
     ap.add_argument("--out", default="classify_report.md")
     ap.add_argument("--work", default="classify_work")
+    ap.add_argument("--tb", default="../tb",
+                    help="bench directory, relative to this mcy dir (default ../tb)")
     ap.add_argument("--inputs", default=",".join(DEFAULT_INPUT_COLS),
                     help="comma-separated trace columns that are stimulus (not diffed)")
     args = ap.parse_args()
@@ -187,7 +189,9 @@ def main():
     here = Path.cwd()
     db = here / "database" / "db.sqlite3"
     design_il = here / "database" / "design.il"
-    tb_dir = (here / ".." / "tb").resolve()
+    tb_dir = (here / args.tb).resolve()
+    if not (tb_dir / "Makefile").exists():
+        sys.exit(f"no Makefile in bench dir {tb_dir}")
     if not db.exists():
         sys.exit("no MCY database here; run from the design's mcy/ dir after `mcy run`")
     if not design_il.exists():

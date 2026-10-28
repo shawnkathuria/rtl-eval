@@ -3,11 +3,11 @@
 **/results.xml
 **/trace*.csv
 **/__pycache__/
-designs/*/mcy/database/
-designs/*/mcy/tasks/
-designs/*/mcy/classify_work/
-designs/*/mcy/classify_report.md
+designs/*/mcy*/database/
+designs/*/mcy*/tasks/
+designs/*/mcy*/classify_work/
+designs/*/mcy*/classify_report.md
 *.vcd
 *.log
-designs/*/mcy/eq_one/
+designs/*/mcy*/eq_one/
 *.bak
