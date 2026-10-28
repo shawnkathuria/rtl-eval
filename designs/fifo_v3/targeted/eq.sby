@@ -1,0 +1,28 @@
+[tasks]
+all
+core
+
+[options]
+mode prove
+expect pass,fail
+timeout 1800
+
+[engines]
+abc pdr
+
+[script]
+core: verilog_defines -DCORE_ONLY
+read_verilog -sv miter.sv
+read_verilog gold.v mut.v
+prep -top miter
+flatten
+opt -fast
+memory_map
+techmap
+opt -fast
+setundef -anyseq
+
+[files]
+miter.sv
+gold.v
+mut.v
