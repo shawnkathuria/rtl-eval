@@ -1,3 +1,0 @@
-read_rtlil /Users/shawnkathuria/Documents/rtl-eval/designs/fifo_v3/mcy/database/design.il
-mutate -ctrl mutsel 8 254 -mode const0 -module fifo_v3 -cell $../rtl/fifo_v3.sv:54$eq$80 -port B -portbit 1 -src ../rtl/fifo_v3.sv:54.32-54.71
-write_rtlil mutated.il

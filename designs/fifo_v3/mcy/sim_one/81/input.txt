@@ -1,1 +1,0 @@
-81 mutate -mode cnot1 -module fifo_v3 -cell $../rtl/fifo_v3.sv:82$add$61 -port A -portbit 3 -ctrlbit 2 -src ../rtl/fifo_v3.sv:82.31-82.47

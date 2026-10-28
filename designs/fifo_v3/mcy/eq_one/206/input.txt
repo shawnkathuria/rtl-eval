@@ -1,1 +1,0 @@
-206 mutate -mode const1 -module fifo_v3 -cell $../rtl/fifo_v3.sv:80$add$60 -port B -portbit 0 -src ../rtl/fifo_v3.sv:80.35-80.54

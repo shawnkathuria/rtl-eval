@@ -19,7 +19,12 @@ toward ICCAD 2027. MCY is the baseline and implementation foundation.
 
 ```
 designs/fifo_v3/      <- the real golden: PULP common_cells fifo_v3 (used in CVA6),
-                         Solderpad license, see rtl/PROVENANCE.md. Same layout as below.
+                         Solderpad license, see rtl/PROVENANCE.md. Same layout as below, plus:
+  benches/PROMPT.md   fixed prompt + protocol every LLM-written bench comes from
+  tb_gpt5/            first LLM bench (ChatGPT), unedited; raw reply in RAW.md
+  mcy_gpt5/           MCY project scoring tb_gpt5 on mcy/'s 300 mutants (database copied)
+  targeted/           hand-written port-only status bugs, formal + both benches:
+                      `python3 make_mutants.py && python3 run.py` -> RESULTS.md
 designs/fifo/         <- smoke-test design: a 60-line hand-written FIFO, same ports idea
   rtl/fifo.v          golden sync FIFO (8 wide x 8 deep), the design under mutation
   tb/test_fifo.py     cocotb bench under evaluation: deterministic stimulus,
@@ -107,7 +112,32 @@ input sequence as text.
 
 Mutation score = COVERED / (COVERED + UNCOVERED).
 
-## Result: fifo_v3, 300 mutants (Oct 27 2026)
+## Results: fifo_v3 (Oct 27 2026)
+
+| bench | MCY, 300 mutants | 5 port-only status bugs (`targeted/`) |
+|---|---|---|
+| `tb/` (hand-written, deliberate checker hole) | 288/290 = 99.3% | **0/5**, all CHECKER_MISS |
+| `tb_gpt5/` (ChatGPT, from `benches/PROMPT.md`, unedited) | 290/290 = 100% | **5/5** |
+
+Mutation score puts the two benches within one point of each other. Five
+hand-written bugs that live only on `full_o`/`usage_o` separate them completely:
+`tb/` drove the design into every one of them (the wrong value sat on the port for
+43-172 cycles) and never looked. Formal proves each of the five is a real bug and
+that `empty_o`/`data_o` stay equivalent to the golden. A control bug in the same
+`full` logic that also drops pushes is caught by both.
+
+Why MCY cannot see this hole on fifo_v3: `usage_o` is the count register's Q, and
+`full_o` is the same comparator that gates pushes, so every cell-level mutant on
+those outputs corrupts internal state and shows up on `empty_o`/`data_o`. Caveat:
+the targeted bugs were written knowing where `tb/`'s hole is. They show the hole
+exists and that mutation score hides it, not how often real bugs land there.
+
+`tb_gpt5/` vs `tb/` on MCY, per mutant: same 10 NOCHANGE ids, zero formal
+disagreements across all 300 (formal reruns reproducibly, independent of the
+bench); the only differences are 262 and 300 below, which `tb_gpt5/` catches
+because it drives `flush_i`.
+
+### `tb/` on MCY
 
 288 caught, 2 missed, 10 proven equivalent. **Score 288/290 = 99.3%.**
 
@@ -130,14 +160,14 @@ identical path (MCY's control mutant), or the random stimulus diverges at cycle 
 
 The bench stands in for an agent-generated one, so it is decent but
 incomplete on purpose: never checks `full`, never checks `count`, random
-traffic only. Expect CHECKER_MISS on mutations in the `count` subtractor and
-the `full` comparator, and STIMULUS_MISS on anything behind a corner the
-random traffic rarely reaches. Replacing this file with a generated bench is
-the whole point.
+traffic only. MCY's mutants never exposed the `full`/`count` hole (see Results);
+the port-only mutants in `designs/fifo_v3/targeted/` do. Replacing this file with
+a generated bench is the whole point.
 
 ## Next steps
 
-1. A population of LLM-written benches for fifo_v3 with a spread of mutation scores.
+1. A population of LLM-written benches for fifo_v3 with a spread of mutation scores
+   (first one: `tb_gpt5/`, scored in `mcy_gpt5/`; more from the same prompt).
 2. A bug population that is not mutants: agent-generated RTL with known failures.
    The experiment: does a bench's mutation score predict its catch rate on those?
 3. More blocks from the same source family: PULP `rr_arb_tree`, `stream_fifo`,
